@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.show{
+    display: flex;
+}
+.hidden{
+    display: none;
+}
+
+
+.game-board {
+    width: 80%;
+    height: 800px;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: relative;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+}
+
+.gameBtn {
+    gap: 50px;
+    height: 200px;
+    width: 200px;    
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.gameBtn:hover {
+    width: 210px;
+    height: 210px;
+    /* background: rgba(0,0,0,0.5); */
+}
+
+
+
+.aBtn{
+    /* background-image: url(/images/redtest.jfif); */
+    /* background-position: center; */
+    /* background-repeat: no-repeat;
+    background-size: auto; */
+    background-color: rgba(255, 0, 0, 0.7);
+    /* position: absolute; */
+} 
+.aBtn:hover{
+    background: rgb(255, 0, 0);
+}
+
+.bBtn{
+    /* background-image: url(/images/redtest.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto; */
+    background-color: rgba(255, 255, 0, 0.7);
+
+    /* position: absolute; */
+}
+.bBtn:hover{
+    background: yellow;
+}
+
+.cBtn{
+    /* background-image: url(/images/redtest.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto; */
+    background-color: rgba(0, 0, 255, 0.7);
+
+    /* position: absolute; */
+}
+.cBtn:hover{
+    background: blue;
+}
+
+.dBtn{
+    /* background-image: url(/images/redtest.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto; */
+    background-color: rgba(0, 128, 0, 0.7);
+
+    /* position: absolute; */
+}
+.dBtn:hover{
+    background: green;
+}
+
+
