@@ -45,31 +45,31 @@
 // const gameBoard2 = document.getElementsByClassName("game-board")
 // gameBoard2.classList.add("show")
 
-
-const openGame = document.getElementsByClassName("openBtn");
-const startBtn = document.getElementsByClassName("startBtn")
-const gameOver = document.getElementsByClassName("try-again-btn")
-
-const aPress = document.getElementsByClassName("aBtn");
-const bPress = document.getElementsByClassName("bBtn");
-const cPress = document.getElementsByClassName("cBtn");
-const dPress = document.getElementsByClassName("dBtn");
-
-class game {
-    constructor(gameBoard) {
-        this.gameBoard = gameBoard
-
+class Game {
+    constructor(gameOrder) {
+        this.gameOrder = gameOrder;
     }
 
-    boardGenerator (){
-        const gameOrder = [];
-        gameOrder = 
-    }
+
+    gameSetter (gameOrder){
+            
+        }
+
+    
 }
 
 
 
+class Player {
+    constructor() {
+        this.life = 3;
+    }
 
+    catchInput(playerInput) {
+        follow()
+
+    }
+}
 
 
 
