@@ -47,7 +47,71 @@ startBtn[0].addEventListener("click", () => {
 
 //settimeout
 
-let test2Arr = [bPress,cPress]
+let slice = [aPress,bPress,cPress,dPress]
+let k = 0;
+
+// let slowpush = setInterval(()=>{
+//     slice[k]
+//     gameOrder[k].classList.add("highlight")
+//     k++
+//     if (k = slice.length){clearInterval(slowpush)}
+
+//     if (slice.classList.contains("none")){
+//         document.querySelectorAll("gameBtn").forEach(elem => elem.pause())
+//         gameOrder.forEach((gameBtn) => {gameBtn.classList.remove("highlight")})
+//     }
+// },1000)
+
+    let blink = setInterval(()=> {
+        gameOrder[counter]
+        document.querySelector(".gameBtn").classList.add("highlight")
+        counter++
+        if (counter === userInput){clearInterval(blink)}
+        //parando
+        if(document.querySelector(".gameBtn").classList.contains("none")){
+            document.querySelector(".gameBtn")
+        }
+    })
+
+
+
+
+
+ //TOCANDO AS NOTAS DA SEQUENCIA
+//  let k=0  OK ISSO EH MEU COUNTER
+//  let id = setInterval(()=>{     EU COMECO DAQUI 
+//    audio(sequencia[k])  ========= GAMEORDER(SLICE[COUNTER])
+//    document.querySelector(`[data-key="${sequencia[k]}"]`).classList.add ("playing") ======SLICE[COUNTER].CLASSLIST.ADD("HIGHLIGHT")
+//    k++ ======= COUNTER ++
+//    if(k === dificuldade){clearInterval(id)} ====== IF (COUNTER === USERINPUT){CLEARINTERVAL(ID)}
+//    //PARANDO DE TOCAR QUANDO VOLTAR AO MENU
+//    if(piano.classList.contains("none")){ ========= IF (GAMEBTN.CLASSLIST.CONTAINS("NONE"))
+//      document.querySelectorAll("audio").forEach( elem => elem.pause()) ======== GAMEBTN.FOREACH(ELEM => ELEM.PAUSE()) OQ EH O QUERYSELECTOR ALL AUDIO?
+//      keys.forEach((key) => {key.classList.remove("playing")}) ======GAMEBTN.FOREACH((GAMEBTN)=>{GAMEBTN.CLASSLIST.REMOVE("HIGHLIGHT")})
+//    }
+//  },1500)
+ 
+
+// setTimeout(() => {
+    
+//     for (let i = 0 ; i<slice.length ; i++) {  
+//         setInterval(() => {       
+             
+//             console.log('dentro do settimeout')
+//             slice[i].classList.add('highlight')
+//         }, 2000);       
+    
+//         setInterval(() => {
+//             slice[i].classList.remove('highlight')
+//         }, 2500);
+//     }
+//     return slowpush
+// },500);
+
+
+
+
+
 
 
 
@@ -67,21 +131,38 @@ let test2Arr = [bPress,cPress]
 //     }
 // },1000);
 
-setTimeout(() => {
-    for (let i = 0 ; i<test2Arr.length ; i++) {  
-        setInterval(() => {       
-            
-            console.log('dentro do settimeout')
-            test2Arr[i].classList.add('highlight')
-        }, 200);  
-        
+
+
+// setInterval(() => {
+//     for (let i = 0 ; i < slice.length ; i++) {
+//         slowpush.push(slice[i])
+//     }
+//     setInterval(() => {       
+//         for (let i = 0 ; i < slowpush.length ; i++)
+//         console.log('dentro do settimeout')
+//         slice[i].classList.add('highlight')
+//     }, 2000);       
+
+//     setInterval(() => {
+//         for (let i = 0 ; i < slowpush.length ; i++)
+//         slice[i].classList.remove('highlight')
+//     }, 2500);
     
-        setInterval(() => {
-            test2Arr[i].classList.remove('highlight')
-        }, 450);
+// },500)
+
+
+
+
+// setInterval(() => {
+//     slice.forEach((slice) ={
+//         slowpush.push(slice[0])
+//     })
     
-    }
-},2000);
+// },500)
+
+
+
+
 
 
 
