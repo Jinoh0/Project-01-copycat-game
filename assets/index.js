@@ -83,6 +83,7 @@ class Player {
 
 //MELHORAR O BALANCEAMENTO DA RANDOMIZACAO DE KEYS
 //TALVEZ MUDAR A MENSAGEMZINHA DE VIDA E GAMEOVER
+//tamanho dos botoes desconfiguram de acordo comm a tela
 
 
 

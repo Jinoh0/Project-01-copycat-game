@@ -1,6 +1,13 @@
-const fourty = ["aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress","aPress","bPress", "cPress", "dPress",]
+const aPress = document.getElementById("aPress");
+const bPress = document.getElementById("bPress");
+const cPress = document.getElementById("cPress");
+const dPress = document.getElementById("dPress"); 
+
+const fourty = [aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress,aPress,bPress, cPress, dPress]
 const gameOrder = fourty.sort(()=> Math.random() - 0.5);
 console.log(gameOrder)
+
+const currentPlayer = new Player;
 
 const welcome = document.getElementsByClassName("welcome");
 const gameBoard = document.getElementsByClassName("game-board");
@@ -10,36 +17,85 @@ const openGame = document.getElementsByClassName("openBtn");
 const startBtn = document.getElementsByClassName("startBtn");
 const tryAgain = document.getElementsByClassName("try-again-btn");
 
-const aPress = document.getElementById("aPress");
-const bPress = document.getElementById("bPress");
-const cPress = document.getElementById("cPress");
-const dPress = document.getElementById("dPress"); 
-let counter = 0;
+const allBtns = document.querySelectorAll(".gameBtn")
 
-const currentPlayer = new Player;
+
+let counterTurn = 0;
+let slice = [aPress,bPress,cPress,dPress] //cannot read properties of slice if changed
+
+function playSequence () {
+    disableBtns()
+    let counter = 0;
+    let shouldClear = true;
+    const vel = 500;
+
+    const interval = setInterval(() => {
+
+        let slice2 = gameOrder.slice(0,counterTurn)
+        console.log(slice2)
+        console.log(counter)
+        const indiceGabarito = gameOrder[counter];
+        const colorBtn = userInput[indiceGabarito];
+        const btn = document.getElementById(colorBtn); //isso eh problema?
+
+        if (shouldClear) {
+            // allBtns[0].classList.add("highlight");
+            // userInput[indiceGabarito];    
+            gameOrder[counter].classList.add("highlight") //MUDAR ISSO A SLICE EH O PEDACO QUE O JOGADOR VAI JOGAR NO ROUND      
+        }else{
+            // allBtns[0].classList.remove("highlight")
+            gameOrder[counter].classList.remove("highlight") //MUDAR ISSO  
+            counter++;          
+        }
+
+        if (counter === slice2.length){
+            clearInterval(interval)
+            enableBtns()
+        }
+
+        shouldClear = !shouldClear;
+    }, vel);
+}
+
+
+function enableBtns(){
+    allBtns.forEach((botao)=> {
+        botao.removeAttribute("disabled");
+        // botao.removeAttribute("gameBtn:hover")
+    })
+}
+
+function disableBtns(){
+    allBtns.forEach((botao)=> {
+        botao.setAttribute("disabled","disabled");
+        // botao.setAttribute("gameBtn:hover")
+    })
+}
+
+
 
 
 console.log(openGame)
 
-openGame[0].addEventListener("click",()=>{
-    startGame();
-})
+// openGame[0].addEventListener("click",()=>{
+//     startGame();
+// })
 
 
-startBtn[0].addEventListener("click", () => {
-    counter ++;
-    const showLead = setInterval(() => {
-        const turn = gameOrder.slice(0,counter)
-        for (let i=0 ; i<turn.length; i++) {
-            // turn[i].toggleAttribute(aPressALLPRESS??.classList.add(aBtn:hover))
-            // ou entao varios ifs para checar se o [i] eh igual ao parametro escolhido para clicar?
-            // console.log('piscando')    
-        }
-        // console.log(gameOrder)
-        // console.log('piscou')
-        // console.log(turn)
-    },600)    
-    })
+// startBtn[0].addEventListener("click", () => {
+//     playSequence()
+//     const showLead = setInterval(() => {
+//         const turn = gameOrder.slice(0,counter)
+//         for (let i=0 ; i<turn.length; i++) {
+//             // turn[i].toggleAttribute(aPressALLPRESS??.classList.add(aBtn:hover))
+//             // ou entao varios ifs para checar se o [i] eh igual ao parametro escolhido para clicar?
+//             // console.log('piscando')    
+//         }
+//         // console.log(gameOrder)
+//         // console.log('piscou')
+//         // console.log(turn)
+//     },600)    
+//     })
 
 
 // aPress.classList.add('teste')
@@ -47,8 +103,7 @@ startBtn[0].addEventListener("click", () => {
 
 //settimeout
 
-let slice = [aPress,bPress,cPress,dPress]
-let k = 0;
+
 
 // let slowpush = setInterval(()=>{
 //     slice[k]
@@ -62,16 +117,16 @@ let k = 0;
 //     }
 // },1000)
 
-    let blink = setInterval(()=> {
-        gameOrder[counter]
-        document.querySelector(".gameBtn").classList.add("highlight")
-        counter++
-        if (counter === userInput){clearInterval(blink)}
-        //parando
-        if(document.querySelector(".gameBtn").classList.contains("none")){
-            document.querySelector(".gameBtn")
-        }
-    })
+    // let blink = setInterval(()=> {
+    //     gameOrder[counter]
+    //     document.querySelector(".gameBtn").classList.add("highlight")
+    //     counter++
+    //     if (counter === userInput){clearInterval(blink)}
+    //     //parando
+    //     if(document.querySelector(".gameBtn").classList.contains("none")){
+    //         document.querySelector(".gameBtn")
+    //     }
+    // })
 
 
 
@@ -161,9 +216,18 @@ let k = 0;
 // },500)
 
 
+const startTheGame =
+    startBtn[0].addEventListener("click",()=>{
+        counterTurn++
+        playSequence()
+        userInput = [];
+    })
 
-
-
+const openTheGame = 
+    openGame[0].addEventListener("click",() =>{
+        startGame()
+        enableBtns()
+    })
 
 
 
@@ -171,13 +235,14 @@ let k = 0;
 function startGame () {
     welcome[0].style.display="none"
     gameBoard[0].style.display="flex"
-    gameOver[0].style.display="none"
+    // gameOver[0].style.display="none"
 }
 
 //botao de tente novamente
 const try2 = document.createElement("button")
 try2.addEventListener("click",()=>{
-    document.location.reload()    
+    document.location.reload()   
+    userInput = []; 
 })
 try2.innerText="Jogar novamente"
 //botao de tente novamente
@@ -188,7 +253,12 @@ function loseLife (Player) {
     if (Player.life === 0) {
         window.alert("VOCE PERDEU!!!")
         gameBoard[0].append(try2);
-
+        disableBtns()
+        userInput = [];
+        
+    }else{
+        playSequence();
+        userInput = [];        
     }
 }
 
@@ -198,6 +268,9 @@ function checkTurn (userIndex,gameBoardIndex) {
     console.log(userIndex)
     console.log(gameBoardIndex)
    if (userIndex === gameBoardIndex){
+    if (userInput.length === counterTurn){
+        window.alert("GENIUS! CLICK START GAME!")
+    }
     return;
    }else{
     window.alert("voce perdeu UMA vida")
@@ -210,24 +283,27 @@ function checkTurn (userIndex,gameBoardIndex) {
 let userInput = [];
 
     aPress.addEventListener("click", ()=>{
-        userInput.push("aPress")
-        checkTurn(userInput[userInput.length-1],gameOrder[userInput.length-1]);
+        userInput.push(aPress)
+        console.log(userInput)
+        checkTurn(userInput[userInput.length-1],gameOrder[userInput.length-1]);        
     })
 
     bPress.addEventListener("click", ()=>{
-        userInput.push("bPress")
+        userInput.push(bPress)
+        console.log(userInput)
         checkTurn(userInput[userInput.length-1],gameOrder[userInput.length-1]);
     })
 
     cPress.addEventListener("click", ()=>{
-        userInput.push("cPress")
+        userInput.push(cPress)
+        console.log(userInput)
         checkTurn(userInput[userInput.length-1],gameOrder[userInput.length-1]);
     })
 
     dPress.addEventListener("click", ()=>{
-        userInput.push("dPress")        
-        checkTurn(userInput[userInput.length-1],gameOrder[userInput.length-1]);
-        console.log(userInput);
+        userInput.push(dPress)
+        console.log(userInput)        
+        checkTurn(userInput[userInput.length-1],gameOrder[userInput.length-1]);        
     })
 
     

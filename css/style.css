@@ -6,8 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;    
 }
 
 
@@ -33,19 +32,29 @@ h1{
 }
 
 .openBtn {
-    background-image: url(/images/openbtncut.jpg);
-    height: 18%;
-    width: 26%;
+    background-image: url("../images/openbtncut.jpg");
+    /* height: 18%; */
+    /* width: 26%; */
+    width: 480px;
+    height: 140px;
+    /* max-width: 400px;
+    max-height: 200px; */
     background-repeat: no-repeat;
     border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 .startBtn{
     position: relative;
-    left: -700px;
-    top: -500px;
+    /* left: -700px;
+    top: -500px;*/
     width: 230px;
-    height: 80px;
+    height: 80px; 
+
+    left: -30%;
+    top: -60%;
     /* justify-content: left;
     align-items: flex-start; */
     background-color: darkgoldenrod;
@@ -57,41 +66,50 @@ h1{
 
 .game-board {
     width: 100%;
-    height: 800px;
+    height: 950px;
     border: 1px solid black;
     margin: 0 auto;    
     /* display: flex; */
     align-items: center;
-    /* justify-content: space-around; */
+    justify-content: space-between;
     /* flex-wrap: wrap; */
     display: none;
     background-color: bisque;
 }
-/* 
-.console {
-    width: 800px;
-    height: 800px;
-} */
+
+#console {
+    margin-top: 140px;
+    width: 500px;
+    height: 400px;
+    /* flex-direction: column; */
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
 
 
 .gameBtn {
-    gap: 50px;
-    height: 200px;
-    width: 200px;    
+    /* gap: 50px; */
+    height: 40%;
+    width: 40%;    
     justify-content: space-around;
+    /* margin: 10px; */
+
     
 }
 
-.gameBtn:hover {
+/* .gameBtn:hover {
     width: 220px;
     height: 220px;
     /* background: rgba(0,0,0,0.5); */
-}
+/* }  */
 
 .highlight {
-    width: 220px;
-    height: 220px;
+    width: 50%;
+    height: 50%;
+    /* height: 220px; */
 }
 
 
@@ -103,9 +121,9 @@ h1{
     background-color: rgba(255, 0, 0, 0.7);
     /* position: absolute; */
 } 
-.aBtn:hover{
+/* .aBtn:hover{
     background: rgb(255, 0, 0);
-}
+} */
 
 .bBtn{
     /* background-image: url(/images/redtest.jfif);
@@ -116,9 +134,9 @@ h1{
 
     /* position: absolute; */
 }
-.bBtn:hover{
+/* .bBtn:hover{
     background: yellow;
-}
+} */
 
 .cBtn{
     /* background-image: url(/images/redtest.jfif);
@@ -129,9 +147,9 @@ h1{
 
     /* position: absolute; */
 }
-.cBtn:hover{
+/* .cBtn:hover{
     background: blue;
-}
+} */
 
 .dBtn{
     /* background-image: url(/images/redtest.jfif);
@@ -142,9 +160,9 @@ h1{
 
     /* position: absolute; */
 }
-.dBtn:hover{
+/* .dBtn:hover{
     background: green;
-}
+} */
 
 
 #aPress{
